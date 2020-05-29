@@ -1,0 +1,29 @@
+h1{
+ text-align: center;
+}
+
+#instructions{
+    text-align: center;
+}
+
+body{
+    background-image: url('desk-typing-background.jpg');
+    background-size: cover;
+
+}
+#prompt1{
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+#Timer,#WPM{
+    font-size: 30px;
+    text-align: left;
+    
+    
+}
+
+#WPM{
+    margin-bottom: 100px;
+}
