@@ -21,9 +21,15 @@ body{
     font-size: 30px;
     text-align: left;
     
-    
 }
 
-#WPM{
-    margin-bottom: 100px;
+#textbox{
+    margin: 0;
+    padding: 0;
+    float:right;
+    position: relative;
+    right:25%;
 }
+/*#WPM{
+    margin-bottom: 100px;
+}*/
