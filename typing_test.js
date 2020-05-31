@@ -4,18 +4,12 @@ var text = document.querySelector("#textbox");
 
 text.addEventListener("keypress",timerStart,{once : true});
 
-
 function timerStart(){
-    
     setInterval(decCount, 1000);
-    
-    
-    
 }
 
 function decCount(){
     count--;
     document.querySelector("#Timer").innerHTML="Timer: "+count;
-
 }
 
