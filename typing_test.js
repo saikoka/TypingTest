@@ -1,6 +1,8 @@
 var promptText=document.querySelector("#prompt1").innerHTML;
 var count=60;
 var text = document.querySelector("#textbox");
+var wordCount=0;
+var timer=0;
 //var actualText = document.querySelector("")
 
 text.addEventListener("keypress",timerStart,{once : true});
@@ -13,14 +15,25 @@ function checkText(){
     else{
         text.style.color="black";
     }
+
+    
 }
 
 function timerStart(){
-    setInterval(decCount, 1000);
+    timer=setInterval(decCount, 1000);
 }
 
 function decCount(){
+    if(count==55){
+        endTest();
+        return;
+    }
     count--;
     document.querySelector("#Timer").innerHTML="Timer: "+count;
 }
 
+function endTest(){
+    text.removeEventListener("keypress",timerStart,{once : true});
+    clearInterval(timer);
+    text.disabled=true;
+}
