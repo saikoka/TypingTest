@@ -4,4 +4,4 @@ When the user's input doesn't match the paragraph, the text will go red, and the
 
 A 1 minute timer will countdown, once it reaches zero, WPM will be displayed and text field will be blocked. 
 
-User can hit retry button to restart application, and can select from multiple paragraphs? and multiple times(30s/60s)
+User can hit refresh to restart application, and can select from multiple paragraphs?
