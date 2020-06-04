@@ -4,6 +4,7 @@ var text = document.querySelector("#textbox");
 var wordCount=0;
 var timer=0;
 var correctLength=0;
+var startingTime=count;
 //var actualText = document.querySelector("")
 
 text.addEventListener("keypress",timerStart,{once : true});
@@ -23,7 +24,6 @@ function checkText(){
     }
     else{
         text.style.color="black";
-        
     }
 
     
@@ -32,6 +32,7 @@ function checkText(){
 function timerStart(){
     timer=setInterval(decCount, 1000);
     document.querySelector("#promptList").disabled=true;
+    document.querySelector("#timesList").disabled=true;
 }
 
 function decCount(){
@@ -47,7 +48,13 @@ function endTest(){
     text.removeEventListener("keypress",timerStart,{once : true});
     clearInterval(timer);
     text.disabled=true;
-    document.querySelector("#WPM").innerHTML="WPM : "+wordCount;
+    if(startingTime==60){
+        document.querySelector("#WPM").innerHTML="WPM : "+wordCount;
+    }
+    else if(startingTime==30){
+        document.querySelector("#WPM").innerHTML="WPM : "+wordCount*2;
+    }
+    
 }
 
 function getResponse(){
@@ -60,4 +67,17 @@ function getResponse(){
         document.querySelector("#prompt").innerHTML="One morning my friend and I were thinking about how we could plan our summer break away from school. Driving from our own state to several nearby states would help to expand our limited funds. Inviting six other friends to accompany us would lower our car expenses. Stopping at certain sites would also help us stretch our truly limited travel budget. Yesterday I engaged in an interesting and enlightening discussion about finances. I found it difficult to imagine that during my lifetime I might well earn at least one-half million dollars. It is also possible that I might spend as much as one-half million during the same period. The really difficult thing for me to do will be to save more of the half-million than I spend. Thinking about today's high cost of living makes this seem an impossible task for most. Last week I asked a friend to talk with me and a girl-friend about college. Our friend is the Dean of Women at a nearby college. The Dean and her staff spend much of their time talking to students who plan to go to college. The first thing she said was to work very hard each day in high school. Good grades are most important for being accepted. Being on time for classes and having a good view toward all phases of the school life are two other things to remember.";
     }
     promptText=document.querySelector("#prompt").innerHTML;
+}
+
+function changeTime(){
+    var timeSelect = document.querySelector("#timesList");
+    var timeOption = timeSelect.options[timeSelect.selectedIndex].value;
+    if(timeOption=="60"){
+        count=60;
+        startingTime=count;
+    }
+    else{
+        count=30;
+        startingTime=count;
+    }
 }
