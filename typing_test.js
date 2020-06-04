@@ -21,9 +21,11 @@ function checkText(){
     }
     if(text.value!==promptText.substring(0,text.value.length)){
         text.style.color="red";
+        text.maxLength=text.value.length;
     }
     else{
         text.style.color="black";
+        text.removeAttribute("maxLength");
     }
 
     
